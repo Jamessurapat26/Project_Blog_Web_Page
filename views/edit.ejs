@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/header.ejs') %>
+<body>
+  <%- include('partials/navbar.ejs') %>
+  <div class="edit-container padding-default">
+    <div class="header-edit">
+      <h1>Edit Your blog</h1>
+    
+    </div>
+    <div class="form">
+      <form action="/editsuccess" method="post">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="" placeholder="title" value=<%= title %>>
+        <label for="content">content</label>
+        <textarea name="content" id="" cols="30" rows="10"><%= content %></textarea>
+        
+        <input type="submit" value="submit" class="bg-blue font-white">
+    
+      </form>
+    </div>
+  </div>
+  <%- include('partials/footer.ejs') %>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/header.ejs') %>
+<body>
+  <%- include('partials/navbar.ejs') %>
+  <div class="home-container padding-default">
+    <div class="header-home">
+      <h1>Homepage</h1>
+    </div>
+    <div class="title-home">
+      <div class="detail-home">
+        <% if (locals.title) { %>
+          <% locals.title.forEach(blogTitle => { %>
+            <a href="/detail/<%= blogTitle %>"><h2><%= blogTitle %></h2></a>
+            <div class="form-home-btn">
+              <form action="/delete/<%= blogTitle %>" method="get" class="remove-form">
+                <input type="hidden" name="title" value="<%= blogTitle %>">
+                <button type="submit">Remove</button>
+              </form>
+              <form action="/edit/<%= blogTitle %>" method="post" class="remove-form">
+                <input type="hidden" name="title" value="<%= blogTitle %>">
+                <button type="submit">Edit</button>
+              </form>
+            </div>
+          <% }); %>
+        <% } else { %>
+          <h3>Please Add Your Blog !!!</h3>
+        <% } %>
+      </div>
+    </div>
+    <hr>
+  </div>  
+  <%- include('partials/footer.ejs') %>
+</body>
+</html>
+
+ 
+
+
+
+
+
+
+
+
+
